@@ -17,7 +17,6 @@ class MainWin(QWidget):
         # создаём и настраиваем графические эелементы:
         self.initUI()
         # устанавливает связи между элементами
-
         self.connects()
         # устанавливает, как будет выглядеть окно (надпись, размер, место)
         self.set_appear()
@@ -26,20 +25,22 @@ class MainWin(QWidget):
 
     def initUI(self):
         ''' создает графические элементы '''
-        self.btn_next = QPushButton(txt_next)
-        self.hello_next = QLabel(txt_hello)
+        self.btn_next = QPushButton(txt_next, self)
+        self.hello_text = QLabel(txt_hello)
         self.instruction = QLabel(txt_instruction)
 
-        self.layout_vertical = QVBoxLayout()
-        self.layout_vertical.adWidget(self.btn_next, alignment=Qt.AligCenter)
-        self.layout_vertical.adWidget(self.hello_next, alignment=Qt.AligLeft)
-        self.layout_vertical.adWidget(self.instruction, alignment=Qt.AligLeft)
-
-    def next_click(self):
-        pass
+        self.layout_line = QVBoxLayout()
+        self.layout_line.addWidget(self.hello_text, alignment=Qt.AlignLeft)
+        self.layout_line.addWidget(self.instruction, alignment=Qt.AlignLeft)
+        self.layout_line.addWidget(self.btn_next, alignment=Qt.AlignCenter)
+        self.setLayout(self.layout_line)
 
     def connects(self):
-        pass
+        self.btn_next.clicked.connect(self.next_click)
+
+    def next_click(self):
+        self.tw = TestWin()
+        self.hide()
 
     ''' устанавливает, как будет выглядеть окно (надпись, размер, место) '''
 
