@@ -139,6 +139,18 @@ class TestWin(QWidget):
 
     def timer3Event(self):
         global time
+        time = time.addSecs(-1)
+        self.text_timer.setText(time.toString("hh:mm:ss"))
+        self.text_timer.setFont(QFont("Times", 36, QFont.Bold))
+        if time.toString("hh:mm:ss") == "00:00:59" :
+            self.text_timer.setStyleSheet("color: rgb(0,0,0)")
+        if time.toString("hh:mm:ss") == "00:00:45" :
+            self.text_timer.setStyleSheet("color: rgb(118,238,198)")
+        if time.toString("hh:mm:ss") == "00:00:15" :
+            self.text_timer.setStyleSheet("color: rgb(0,0,0)")
+        if time.toString("hh:mm:ss") == "00:00:00":
+            self.timer.stop()
+        
 
     def connects(self):
         self.btn_next.clicked.connect(self.next_click)
