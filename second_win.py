@@ -91,12 +91,6 @@ class TestWin(QWidget):
         self.h_line.addLayout(self.r_line)
         self.setLayout(self.h_line)
 
-    def next_click(self):
-        self.hide()
-        self.exp = Experiment(int(self.line_age.text()), self.line_test1.text(
-        ), self.line_test2.text(), self.line_test2.text())
-        self.fw = FinalWin(self.exp)
-
     def timer_test(self):
         global time
         time = QTime(0, 0, 15)
@@ -157,3 +151,9 @@ class TestWin(QWidget):
         self.btn_test1.clicked.connect(self.timer_test)
         self.btn_test2.clicked.connect(self.timer_sits)
         self.btn_test3.clicked.connect(self.timer_final)
+
+    def next_click(self):
+        self.hide()
+        self.exp = Experiment(int(self.line_age.text()), self.line_test1.text(
+        ), self.line_test2.text(), self.line_test2.text())
+        self.tw = FinalWin(self.exp)

@@ -10,8 +10,8 @@ from PyQt5.QtWidgets import (
 from instr import *
 
 
-class FinalWin():  # QWidget
-    def __init__(self):  # , exp
+class FinalWin(QWidget):
+    def __init__(self,exp):
         ''' окно, в котором проводится опрос '''
         super().__init__()
 
@@ -27,8 +27,19 @@ class FinalWin():  # QWidget
         # старт:
         self.show()
 
-    def results(self):
-        pass
+    def results(self,exp): #self = сам
+        self.index=(4*(int(self.exp.t1)+int(self.exp.t2)+int(self.exp.t3))-200)/10
+        if self.exp.age >= 15:
+            if self.index >= 15:
+                return txt_res1 #вернуть строку txt_res1
+            if self.index < 15 and self.index >= 13:
+                return txt_res2
+            if self.index < 13 and self.index >= 11:
+                return txt_res3
+            if self.index < 11 and self.index >= 9:
+                return txt_res4
+            if self.index < 9 and self.index >= 7:
+                return txt_res5
 
     def initUI(self):
         ''' создаёт графические элементы '''
