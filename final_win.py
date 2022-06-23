@@ -16,7 +16,7 @@ class FinalWin():  # QWidget
         super().__init__()
 
         # получаем данные об эксперименте
-     #    self.exp = exp
+        self.exp = exp
 
         # создаём и настраиваем графические элементы:
         self.initUI()
@@ -32,8 +32,8 @@ class FinalWin():  # QWidget
 
     def initUI(self):
         ''' создаёт графические элементы '''
-     #    self.work_text = QLabel(txt_workheart + self.results())
-     #    self.index_text = QLabel(txt_index + str(self.index))
+        self.work_text = QLabel(txt_workheart + self.results())
+        self.index_text = QLabel(txt_index + str(self.index))
 
         self.layout_line = QVBoxLayout()
         self.layout_line.addWidget(self.index_text, alignment=Qt.AlignCenter)

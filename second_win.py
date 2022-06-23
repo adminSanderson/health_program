@@ -12,7 +12,7 @@ from final_win import *
 
 #123
 
-class Experiment():
+class Experiment(): # Данные (по тестам)
     def __init__(self, age, test1, test2, test3):
         self.age = age
         self.t1 = test1
