@@ -104,7 +104,7 @@ class TestWin(QWidget):
         self.timer = QTimer()
         self.timer.timeout.connect(self.timer2Event)
         # одно приседание в 1.5 секунды
-        self.timer.start(6000)
+        self.timer.start(1500)
 
     def timer_final(self):
         global time
@@ -117,7 +117,7 @@ class TestWin(QWidget):
         global time
         time = time.addSecs(-1)
         self.text_timer.setText(time.toString("hh:mm:ss"))
-        self.text_timer.setFont(QFont("Times", 36, QFont.Bold))
+        self.text_timer.setFont(QFont("Poppins", 36, QFont.Bold))
         self.text_timer.setStyleSheet("color: rgb(0,0,0)")
         if time.toString("hh:mm:ss") == "00:00:00":
             self.timer.stop()
@@ -127,7 +127,7 @@ class TestWin(QWidget):
         time = time.addSecs(-1)
         self.text_timer.setText(time.toString("hh:mm:ss")[6:8])
         self.text_timer.setStyleSheet("color: rgb(0,0,0)")
-        self.text_timer.setFont(QFont("Times", 36, QFont.Bold))
+        self.text_timer.setFont(QFont("Poppins", 36, QFont.Bold))
         if time.toString("hh:mm:ss") == "00:00:00":
             self.timer.stop()
 
@@ -135,7 +135,7 @@ class TestWin(QWidget):
         global time
         time = time.addSecs(-1)
         self.text_timer.setText(time.toString("hh:mm:ss"))
-        self.text_timer.setFont(QFont("Times", 36, QFont.Bold))
+        self.text_timer.setFont(QFont("Poppins", 36, QFont.Bold))
         if time.toString("hh:mm:ss") == "00:00:59" :
             self.text_timer.setStyleSheet("color: rgb(0,0,0)")
         if time.toString("hh:mm:ss") == "00:00:45" :
