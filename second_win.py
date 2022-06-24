@@ -154,6 +154,5 @@ class TestWin(QWidget):
 
     def next_click(self):
         self.hide()
-        self.exp = Experiment(int(self.line_age.text()), self.line_test1.text(
-        ), self.line_test2.text(), self.line_test2.text())
+        self.exp = Experiment(int(self.line_age.text()), self.line_test1.text(), self.line_test2.text(), self.line_test3.text()) #засунули все значения в  exp
         self.tw = FinalWin(self.exp)
